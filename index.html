@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Dia das Mulheres ❤️</title>
+
+<style>
+
+body{
+background:linear-gradient(#ff9bb3,#ff4d6d);
+font-family:Arial;
+text-align:center;
+padding-top:40px;
+color:white;
+overflow:hidden;
+}
+
+/* foto */
+.foto-romantica{
+width:300px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,0,80,0.7);
+margin-top:20px;
+animation:aparecer 2s ease;
+}
+
+@keyframes aparecer{
+0%{opacity:0;transform:scale(0.8);}
+100%{opacity:1;transform:scale(1);}
+}
+
+/* corações */
+.coracao{
+position:fixed;
+top:-10px;
+color:red;
+animation:cair 6s linear infinite;
+}
+
+/* rosas */
+.rosa{
+position:fixed;
+top:-10px;
+animation:cair 8s linear infinite;
+}
+
+@keyframes cair{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(110vh);}
+}
+
+h1{
+font-size:36px;
+}
+
+p{
+font-size:20px;
+max-width:500px;
+margin:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Feliz Dia das Mulheres ❤️</h1>
+
+<p>
+Feliz dia das mulheres meu amor,<br>
+quero que você saiba que você é muito importante para mim.<br>
+Você é uma mulher incrível.<br><br>
+
+Parabéns pelo seu dia.<br>
+Eu te amo muito e sempre vou fazer de tudo por você ❤️
+</p>
+
+<img src="foto.gif" class="foto-romantica">
+
+<!-- música -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/0tn9K9xYh0Q?start=0&end=105&autoplay=1&loop=1&playlist=0tn9K9xYh0Q"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<script>
+
+function criarCoracao(){
+const coracao=document.createElement("div");
+coracao.classList.add("coracao");
+coracao.innerHTML="❤️";
+coracao.style.left=Math.random()*100+"vw";
+coracao.style.fontSize=(Math.random()*25+15)+"px";
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},6000);
+}
+
+function criarRosa(){
+const rosa=document.createElement("div");
+rosa.classList.add("rosa");
+rosa.innerHTML="🌹";
+rosa.style.left=Math.random()*100+"vw";
+rosa.style.fontSize=(Math.random()*25+20)+"px";
+
+document.body.appendChild(rosa);
+
+setTimeout(()=>{
+rosa.remove();
+},8000);
+}
+
+setInterval(criarCoracao,400);
+setInterval(criarRosa,1200);
+
+</script>
+<div style="margin-top:20px;">
+<button onclick="tocarMusica()" style="
+padding:12px 25px;
+font-size:18px;
+background:#ff4d6d;
+color:white;
+border:none;
+border-radius:20px;
+cursor:pointer;">
+🎵 Tocar música
+</button>
+</div>
+
+<iframe id="player"
+width="0"
+height="0"
+src=""
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<script>
+function tocarMusica(){
+document.getElementById("player").src =
+"https://youtu.be/lFxXFq2zWOo?si=3DH02JG_TrhZq33W";
+}
+  
+</script>
+  
+</body>
+</html>
