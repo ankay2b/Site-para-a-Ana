@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feliz Dia das Mulheres</title>
+
+<style>
+
+body{
+background:linear-gradient(pink,#ffb6c1);
+font-family:Arial;
+text-align:center;
+padding-top:120px;
+overflow:hidden;
+}
+
+h1{
+color:#c2185b;
+font-size:40px;
+}
+
+p{
+font-size:22px;
+color:#880e4f;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+margin:10px;
+}
+
+.heart{
+position:absolute;
+top:-50px;
+font-size:25px;
+animation:cair 6s linear infinite;
+}
+
+@keyframes cair{
+0%{transform:translateY(-50px);}
+100%{transform:translateY(100vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>💖 Feliz dia das mulheres meu amor 💖</h1>
+
+<p>
+Quero que saiba que você é muito especial para mim,<br>
+você é uma mulher incrível, muito guerreira.<br>
+Vou sempre fazer de tudo por você.<br><br>
+Eu te amo ❤️
+</p>
+
+<button onclick="alert('Eu te amo muito ❤️')">
+Eu te amo 💕
+</button>
+
+<br>
+
+<button onclick="tocarMusica()">
+🎵 Tocar música
+</button>
+
+<!-- música -->
+<audio id="musica">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function tocarMusica(){
+document.getElementById("musica").play();
+}
+
+function coracao(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(coracao,300);
+
+</script>
+
+</body>
+</html>
