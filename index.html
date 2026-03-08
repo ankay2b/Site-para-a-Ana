@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para você ❤️</title>
+
+<style>
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:50px;
+overflow:hidden;
+}
+
+img{
+width:320px;
+border-radius:20px;
+margin-top:20px;
+}
+
+h1{
+color:#ff4d6d;
+}
+
+/* corações */
+.coracao{
+position:fixed;
+top:-10px;
+color:red;
+animation:cair 6s linear infinite;
+}
+
+/* rosa */
+.rosa{
+position:fixed;
+font-size:50px;
+left:50%;
+top:70%;
+transform:translate(-50%,0);
+animation:subir 3s ease forwards;
+}
+
+/* animação coração */
+@keyframes cair{
+0%{transform:translateY(-10px)}
+100%{transform:translateY(100vh)}
+}
+
+/* animação rosa */
+@keyframes subir{
+0%{
+opacity:0;
+transform:translate(-50%,50px) scale(0.5);
+}
+100%{
+opacity:1;
+transform:translate(-50%,0) scale(1);
+}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Feliz Dia das Mulheres ❤️</h1>
+
+<p>
+Feliz dia das mulheres meu amor,<br>
+quero que você saiba que você é muito importante para mim.<br>
+Você é uma mulher incrível.<br><br>
+
+Parabéns pelo seu dia.<br>
+Eu te amo muito e sempre vou fazer de tudo por você ❤️
+</p>
+
+<img src="foto.gif">
+
+<div class="rosa">🌹</div>
+
+<!-- Música -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/0tn9K9xYh0Q?start=0&end=105&autoplay=1&loop=1&playlist=0tn9K9xYh0Q"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<script>
+function criarCoracao(){
+const coracao=document.createElement("div");
+coracao.classList.add("coracao");
+coracao.innerHTML="❤️";
+coracao.style.left=Math.random()*100+"vw";
+coracao.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(coracao);
+
+setTimeout(()=>{coracao.remove();},6000);
+}
+
+setInterval(criarCoracao,300);
+</script>
+
+</body>
+</html>
